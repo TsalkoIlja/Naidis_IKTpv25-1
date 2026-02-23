@@ -95,18 +95,18 @@ namespace Naidis_IKTpv25
             {
                 isik.Tervita();
             }
-            // 1
+            //1. Juhuslike arvude ruudud
             var ruudud = ArvuTöötlus.GenereeriRuudud(1, 10);
             foreach (var r in ruudud)
                 Console.WriteLine(r);
 
-            // 4
+            //4. Osta elevant ära! 
             Osa3_funktsioonid.KuniMärksõnani("elevant", "Osta elevant ära!");
 
-            // 5
+            //5. Arvamise mäng
             Osa3_funktsioonid.ArvaArv();
 
-            // 6
+            //6. Suurim neliarvuline arv
             int[] neli = new int[4];
             for (int i = 0; i < 4; i++)
             {
@@ -115,22 +115,22 @@ namespace Naidis_IKTpv25
             }
             Console.WriteLine(Osa3_funktsioonid.SuurimNeliarv(neli));
 
-            // 7
+            //7. Korrutustabel
             Osa3_funktsioonid.Korrutustabel(10, 10);
 
-            // 9
+            //9. Arvude ruudud
             Osa3_funktsioonid.ArvudeRuudud();
 
-            // 10
+            //10. Positiivsed ja negatiivsed
             Osa3_funktsioonid.PositiivsedNegatiivsed();
 
-            // 11
+            //11. Keskmisest suuremad
             Osa3_funktsioonid.KeskmisestSuuremad();
 
-            // 12
+            //12. Kõige suurema arvu otsing
             Osa3_funktsioonid.SuurimArv();
 
-            // 13
+            //13. Paaris ja paaritud
             Osa3_funktsioonid.PaarisPaaritud();
 
 
