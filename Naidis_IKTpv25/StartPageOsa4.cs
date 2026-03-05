@@ -11,7 +11,7 @@ namespace Naidis_IKTpv25
             bool validInput = false;
             while (!validInput)
             {
-                Console.WriteLine("\nVali ülesanne:");
+                Console.WriteLine("\nVali ülesanne:"); Console.WriteLine("0 - Kuud.txt näide (õpetaja materjal)");
                 Console.WriteLine("1 - Lemmiktoidu salvestamine faili");
                 Console.WriteLine("2 - Kogu menüü kuvamine");
                 Console.WriteLine("3 - Koostisosade nimekirja muutmine");
@@ -22,6 +22,11 @@ namespace Naidis_IKTpv25
 
                 switch (valik)
                 {
+                    case "0":
+                        Osa4_funktsioonid.KuudNaide();
+                        validInput = true;
+                        break;
+
                     case "1":
                         Osa4_funktsioonid.SalvestaToit();
                         validInput = true;
@@ -55,4 +60,3 @@ namespace Naidis_IKTpv25
         }
     }
 }
-

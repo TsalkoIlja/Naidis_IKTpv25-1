@@ -6,10 +6,74 @@ namespace Naidis_IKTpv25
 {
     public class Osa4_funktsioonid
     {
+       
+        // Ülesanne 0: Kuud.txt näide
+        
+
+        private static string kuudFail =
+            Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Kuud.txt");
+
+        public static void KuudNaide()
+        {
+            try
+            {
+                // 1. Faili kirjutamine
+                Console.Write("Sisesta mingi tekst (kuu): ");
+                string lause = Console.ReadLine();
+
+                using (StreamWriter sw = new StreamWriter(kuudFail, true))
+                {
+                    sw.WriteLine(lause);
+                }
+
+                // 2. Faili lugemine
+                Console.WriteLine("\nFaili sisu:");
+                using (StreamReader sr = new StreamReader(kuudFail))
+                {
+                    Console.WriteLine(sr.ReadToEnd());
+                }
+
+                // 3. Ridade lugemine listi
+                List<string> kuude_list = new List<string>();
+                foreach (string rida in File.ReadAllLines(kuudFail))
+                {
+                    kuude_list.Add(rida);
+                }
+
+                // 4. Listi muutmine
+                kuude_list.Remove("Juuni");
+                if (kuude_list.Count > 0)
+                    kuude_list[0] = "Veeel kuuu";
+
+                Console.WriteLine("\nPärast muutmist:");
+                foreach (string kuu in kuude_list)
+                    Console.WriteLine(kuu);
+
+                // 5. Otsing
+                Console.Write("\nSisesta kuu otsimiseks: ");
+                string otsitav = Console.ReadLine();
+
+                if (kuude_list.Contains(otsitav))
+                    Console.WriteLine("Kuu on olemas.");
+                else
+                    Console.WriteLine("Sellist kuud pole.");
+
+                // 6. Salvestamine
+                File.WriteAllLines(kuudFail, kuude_list);
+                Console.WriteLine("\nAndmed on salvestatud!");
+            }
+            catch
+            {
+                Console.WriteLine("Viga Kuud.txt töötlemisel!");
+            }
+        }
+
+
+        // Ülesanded 1–5 (Praktilised ülesanded)
+
         private static string koostisosadeFail =
             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Koostisosad.txt");
 
-        // Laadib koostisosad failist või loob faili, kui seda pole
         private static List<string> LaeKoostisosad()
         {
             if (!File.Exists(koostisosadeFail))
@@ -21,7 +85,7 @@ namespace Naidis_IKTpv25
             return new List<string>(File.ReadAllLines(koostisosadeFail));
         }
 
-        // Ülesanne 1: Lemmiktoidu salvestamine faili
+        // Ülesanne 1
         public static void SalvestaToit()
         {
             try
@@ -44,7 +108,7 @@ namespace Naidis_IKTpv25
             }
         }
 
-        // Ülesanne 2: Kogu menüü kuvamine
+        // Ülesanne 2
         public static void LoeToidud()
         {
             try
@@ -64,7 +128,7 @@ namespace Naidis_IKTpv25
             }
         }
 
-        // Ülesanne 3: Koostisosade muutmine
+        // Ülesanne 3
         public static void MuudaKoostisosad()
         {
             try
@@ -91,7 +155,7 @@ namespace Naidis_IKTpv25
             }
         }
 
-        // Ülesanne 4: Otsing listist
+        // Ülesanne 4
         public static void OtsiKoostisosa()
         {
             try
@@ -112,7 +176,7 @@ namespace Naidis_IKTpv25
             }
         }
 
-        // Ülesanne 5: Salvestamine tagasi faili
+        // Ülesanne 5
         public static void SalvestaKoostisosad()
         {
             try
