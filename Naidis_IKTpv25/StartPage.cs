@@ -28,6 +28,7 @@ namespace Naidis_IKTpv25
                 Inimene inimene = new Inimene(nimi, vanus);
                 Inimesed.Add(inimene);
             }
+            
             var analüüs= Osa3_funktsioonid.Statistika(Inimesed);
             Console.WriteLine($"Vanuste arv: {analüüs.Item1}");
             Console.WriteLine($"Vanuste keskmine: {analüüs.Item2}");
@@ -96,7 +97,8 @@ namespace Naidis_IKTpv25
                 isik.Tervita();
             }
 
-
+            int juhuslik_arv = new Random().Next(-5, 25);
+            string juhuslik_arv_to_tekst = juhuslik_arv.ToString();
 
             //Console.OutputEncoding = Encoding.UTF8;
             //Console.WriteLine("1. Osa Andmetüübid, Alamfunktsioonid/meetodid");
