@@ -7,11 +7,7 @@ namespace Naidis_IKTpv25
     public class StartPage
     {
         public static void Main(string[] args)
-
         {
-          
-            // OSA 5 – Kollektsioonid
-
             Console.WriteLine("=== OSA 5 – Kollektsioonid, Listid ja Sõnastikud ===");
 
             // 1. ArrayList näide
@@ -46,7 +42,25 @@ namespace Naidis_IKTpv25
             Console.WriteLine("\n8) Ülesanne 3 – Õpilaste analüüs");
             Osa5_funktsioonid.OpilasteAnalüüs();
 
+            // Ülesanne 4 – Filmide kogu
+            Console.WriteLine("\n9) Ülesanne 4 – Filmide kogu");
+            Osa5_funktsioonid.FilmideKogu();
+
+            // Ülesanne 5 – Arvude massiivi statistika
+            Console.WriteLine("\n10) Ülesanne 5 – Arvude massiivi statistika");
+            Osa5_funktsioonid.ArvudeStatistika();
+
+            // Ülesanne 6 – Lemmikloomade register
+            Console.WriteLine("\n11) Ülesanne 6 – Lemmikloomade register");
+            Osa5_funktsioonid.LemmikloomadeRegister();
+
+            // Ülesanne 7 – Valuutakalkulaator
+            Console.WriteLine("\n12) Ülesanne 7 – Valuutakalkulaator");
+            Osa5_funktsioonid.Valuutakalkulaator();
+
             Console.WriteLine("\n=== Kõik ülesanded on lõpetatud ===");
+        
+
 
 
             //// Osa 3
